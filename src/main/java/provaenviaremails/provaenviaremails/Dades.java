@@ -10,7 +10,7 @@ package provaenviaremails.provaenviaremails;
  */
 public class Dades {
 
-    //Posicions: 0.ID, 1.Nom, 3.email
+    //Posicions: 0.ID, 1.Nom, 3.Email
     private static String[][] clients = {
         {"0", "Client A", "ernest.vila@cirvianum.cat"},
         {"3", "Client B", "ernestvilacasas@gmail.com"},

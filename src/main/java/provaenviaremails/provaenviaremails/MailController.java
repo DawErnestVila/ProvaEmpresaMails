@@ -18,18 +18,16 @@ import javax.mail.internet.MimeMessage;
  * @author ernest
  */
 public class MailController {
-
+    
     public static void selectUsr(int opcio, String[][] persones) {
         String[] idEnviar = {};
         int continuar, id;
         boolean seguir;
-        for (int i = 0; i < persones.length; i++) {
-            System.out.printf("%3s.   %-20s\n", persones[i][0], persones[i][1]);
-        }
+        PersonesController.mostrarPersones(persones);
         seguir = false;
         while (!seguir) {
             idEnviar = UtilArrays.ferCreixerArray(idEnviar);
-            id = UtilArrays.getPositionbyId(persones);
+            id = PersonesController.getPositionbyId(persones);
             idEnviar[idEnviar.length - 1] = String.valueOf(id);
             continuar = ComprovacioInput.llegirInt("Vols seleccionar algun altre destinetari? (1.Si - 0.No)");
             switch (continuar) {
@@ -47,22 +45,22 @@ public class MailController {
         }
         recorrerEnviar(idEnviar, persones, opcio);
     }
-
+    
     private static void recorrerEnviar(String[] idEnviar, String[][] persones, int opcio) {
         String mailfrom = "ernestvilacasas@gmail.com", appPasswd = "bgnnzryptihspnbk";
         String body = ComprovacioInput.llegirString("Quin és el cos del correu");
         String subjecte = ComprovacioInput.llegirString("Quin és el subjecte del correu");
         for (int i = 0; i < idEnviar.length; i++) {
-            enviarMail(mailfrom, persones[Integer.parseInt(idEnviar[i])][2], appPasswd, subjecte, body);
-//            System.out.println("MailFrom: " + mailfrom);
-//            System.out.println("AppPasswd: " + appPasswd);
-//            System.out.println("MailTo: " + persones[Integer.parseInt(idEnviar[i])][2]);
-//            System.out.println("Subject: " + subjecte);
-//            System.out.println("Body: " + body);
-//            System.out.println("\n");
+//            enviarMail(mailfrom, persones[Integer.parseInt(idEnviar[i])][2], appPasswd, subjecte, body);
+            System.out.println("MailFrom: " + mailfrom);
+            System.out.println("AppPasswd: " + appPasswd);
+            System.out.println("MailTo: " + persones[Integer.parseInt(idEnviar[i])][2]);
+            System.out.println("Subject: " + subjecte);
+            System.out.println("Body: " + body);
+            System.out.println("\n");
         }
     }
-
+    
     private static void enviarMail(String mailFrom, String mailTo, String appPasswd, String subject, String body) {
         // Recipient's email ID needs to be mentioned.
         String to = mailTo;
@@ -84,18 +82,18 @@ public class MailController {
 
         // Get the Session object.// and pass username and password
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
-
+            
             protected PasswordAuthentication getPasswordAuthentication() {
-
+                
                 return new PasswordAuthentication(mailFrom, appPasswd);
-
+                
             }
-
+            
         });
 
         // Used to debug SMTP issues
         session.setDebug(true);
-
+        
         try {
             // Create a default MimeMessage object.
             MimeMessage message = new MimeMessage(session);
@@ -111,7 +109,7 @@ public class MailController {
 
             // Now set the actual message
             message.setText(body);
-
+            
             System.out.println("Enviant...");
             // Send message
             Transport.send(message);

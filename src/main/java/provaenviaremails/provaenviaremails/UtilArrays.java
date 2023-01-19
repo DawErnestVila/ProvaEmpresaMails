@@ -87,29 +87,6 @@ public class UtilArrays {
         return ArrayObjectesAux;
     }
 
-    public static int getPositionbyId(String[][] persones) {
-        int posicio = -1, id = -1;
-        boolean trobat;
-        trobat = false;
-        //Fem un bucle mentres no trobem el producte
-        while (!trobat) {
-            //Es demana la id del producte a l'usuari
-            id = ComprovacioInput.llegirInt("Selecciona un usuari");
-            //Recorrem l'array de productes
-            for (int i = 0; i < persones.length; i++) {
-                //Comprovem si la ID que ha entrat l'usuari coincideix amb la ID del producte dins l'array
-                if (id == Integer.parseInt(persones[i][0])) {
-                    //Si és aixi canviem el trobat a true i assignem a la posició el valor de i
-                    trobat = true;
-                    posicio = i;
-                    break;
-                }
-            }
-        }
-        //Retornem la posició del producte
-        return posicio;
-    }
-
     static String[] ferCreixerArray(String[] idEnviar) {
         String[] aux = new String[idEnviar.length + 1];
         for (int i = 0; i < idEnviar.length; i++) {
