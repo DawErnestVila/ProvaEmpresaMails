@@ -14,12 +14,6 @@ public class ComprovacioInput {
 
     private static Scanner lector = new Scanner(System.in);
 
-    /**
-     * Funció que serveix per comprovar si l'usuari entra un Integer
-     *
-     * @param missatge Missatge que es mostrarà per pantalla abans que l'usuari entri el numero
-     * @return Retorna l'usuari un cop comprovat que és un Integer
-     */
     public static int llegirInt(String missatge) {
         //Mostrem el missatge
         System.out.println(missatge);
@@ -33,12 +27,6 @@ public class ComprovacioInput {
         return lector.nextInt();
     }
 
-    /**
-     * Funció que serveix per comprovar si l'usuari entra el text que coincideixi amb l'expressió regular
-     *
-     * @param missatge Missatge que es mostrarà per pantalla abans que l'usuari entri el text
-     * @return Retorna el missatge
-     */
     public static String llegirString(String missatge) {
         String COMPROVAR_TEXT = "^[a-zA-Z0-9\s]{3,40}$", text;
         //Mostrem el missatge
@@ -56,12 +44,6 @@ public class ComprovacioInput {
         return text;
     }
 
-    /**
-     * Funció que serveix per comprovar si l'usuari entra el text que coincideixi amb l'expressió regular
-     *
-     * @param missatge Missatge que es mostrarà per pantalla abans que l'usuari entri el text
-     * @return Retorna el missatge
-     */
     public static String llegirEmail(String missatge) {
         String COMPROVAR_TEXT = "([A-Za-z0-9!#-'*+\\-/=?^_`{-~\\xA0-\\x{10FFFF}]+(?:\\.[A-Za-z0-9!#-'*+\\-/=?^_`{-~\\xA0-\\x{10FFFF}])|(?:[ !#-\\[\\]-~\\xA0-\\x{10FFFF}]|\\\\[ -~])*)@((?:[A-Za-z0-9](?:[A-Za-z0-9\\-]*[A-Za-z0-9])?|[\\x00-\\x{10FFFF}]*[\\x80-\\x{10FFFF}]+[\\x00-\\x{10FFFF}]*)(?:\\.(?:[A-Za-z0-9](?:[A-Za-z0-9\\-]*[A-Za-z0-9])?|[\\x00-\\x{10FFFF}]*[\\x80-\\x{10FFFF}]+[\\x00-\\x{10FFFF}]*))*)", text;
         //Mostrem el missatge

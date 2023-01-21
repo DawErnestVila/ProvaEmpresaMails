@@ -14,6 +14,5 @@ public class ProvaEnviarEmails {
         while (true) {
             Menu.mostrarMenu();
         }
-//        MailController.enviarMail("ernestvilacasas@gmail.com", "ernest.vila@cirvianum.cat", "bgnnzryptihspnbk", "Subjecte de Prova", "Cos del missatge");
     }
 }

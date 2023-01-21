@@ -12,9 +12,9 @@ public class Dades {
 
     //Posicions: 0.ID, 1.Nom, 3.Email
     private static String[][] clients = {
-        {"0", "Client A", "ernest.vila@cirvianum.cat"},
-        {"3", "Client B", "ernestvilacasas@gmail.com"},
-        {"4", "Client C", "ernestvilac@gmail.com"}};
+        {"0", "Client A", "emailClientA@gmail.com"},
+        {"2", "Client B", "emailClientB@gmail.com"},
+        {"3", "Client C", "emailClientC@gmail.com"}};
 
     public static String[][] getClients() {
         return clients;
@@ -26,9 +26,9 @@ public class Dades {
 
     //Posicions: 0.ID, 1.Nom, 3.email
     private static String[][] proveidors = {
-        {"0", "Proveidor A", "ernest.vila@cirvianum.cat"},
-        {"3", "Proveidor B", "ernestvilacasas@gmail.com"},
-        {"4", "Proveidor C", "ernestvilac@gmail.com"}};
+        {"0", "Proveidor A", "emailClientA@gmail.com"},
+        {"1", "Proveidor B", "emailClientb@gmail.com"},
+        {"2", "Proveidor C", "emailClientc@gmail.com"}};
 
     public static String[][] getProveidors() {
         return proveidors;
@@ -40,9 +40,9 @@ public class Dades {
 
     //Posicions: 0.ID, 1.Nom, 3.email
     private static String[][] potencials = {
-        {"0", "Potencial A", "ernest.vila@cirvianum.cat"},
-        {"3", "Potencial B", "ernestvilacasas@gmail.com"},
-        {"4", "Potencial C", "ernestvilac@gmail.com"}};
+        {"0", "Potencial A", "emailClientA@gmail.com"},
+        {"3", "Potencial B", "eemailClientB@gmail.com"},
+        {"4", "Potencial C", "emailClientC@gmail.com"}};
 
     public static String[][] getPotencials() {
         return potencials;
